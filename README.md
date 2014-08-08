@@ -35,3 +35,7 @@ The first parameter is a duration one, should be between 900 seconds (15 minutes
 ! temporary credentials that are fetched with get-session-token will not
 allow to make IAM/STS calls.
 Second parameter is the mfa token.
+
+
+
+
