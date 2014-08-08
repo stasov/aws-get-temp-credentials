@@ -10,8 +10,6 @@ with appropriate permissions + preferably the following condition to force mfa a
 
 "Condition": {"Null": {"aws:MultiFactorAuthAge": "false"}}
 
-I'm using a full admin user, if you a need less permissions remember to allow the user to assume the actual role.
- 
 000000000000 - should be replaced with the account ID.
 
 <existing_role> - existing role with the needed permissions.
@@ -30,10 +28,9 @@ Example policy to attach under Trust relationship:
     }
   ]
 }
-The first parameter is a duration one, should be between 900 seconds (15 minutes) - 3600 seconds (1 hour).
-! For scripts that run longer than an hour use get-session-token
+The first parameter is a duration one, should be between 900 seconds (15 minutes) - 129600 seconds (36 hours).
 ! temporary credentials that are fetched with get-session-token will not
-allow to make IAM/STS calls.
+allow to make specific STS calls.
 Second parameter is the mfa token.
 
 
